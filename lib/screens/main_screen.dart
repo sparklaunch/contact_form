@@ -68,6 +68,24 @@ class _MainScreenState extends State<MainScreen> {
                     isConsentCheckboxChecked: isConsentCheckboxChecked,
                     onConsentCheckboxChanged: onConsentCheckboxChanged,
                   ),
+                  const SizedBox(height: 20),
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: const Color.fromRGBO(14, 114, 94, 1),
+                      foregroundColor: Colors.white,
+                      textStyle: const TextStyle(
+                        fontSize: 18,
+                        fontFamily: "Karla",
+                        fontWeight: FontWeight.bold,
+                      ),
+                      padding: const EdgeInsets.all(20),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                    ),
+                    onPressed: onSubmitTapped,
+                    child: const Text("Submit"),
+                  )
                 ],
               ),
             ),
@@ -111,5 +129,9 @@ class _MainScreenState extends State<MainScreen> {
     setState(() {
       queryType = value;
     });
+  }
+
+  void onSubmitTapped() {
+    // TODO: onSubmitTapped
   }
 }
