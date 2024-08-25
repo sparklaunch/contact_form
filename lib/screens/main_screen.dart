@@ -1,3 +1,4 @@
+import 'package:contact_form/components/consent_checkbox.dart';
 import 'package:contact_form/components/email_address_text_field.dart';
 import 'package:contact_form/components/first_name_text_field.dart';
 import 'package:contact_form/components/last_name_text_field.dart';
@@ -18,6 +19,7 @@ class _MainScreenState extends State<MainScreen> {
   String emailAddress = "";
   String message = "";
   Query? queryType;
+  bool? isConsentCheckboxChecked = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -61,6 +63,11 @@ class _MainScreenState extends State<MainScreen> {
                   Message(
                     onMessageChanged: onMessageChanged,
                   ),
+                  const SizedBox(height: 20),
+                  ConsentCheckbox(
+                    isConsentCheckboxChecked: isConsentCheckboxChecked,
+                    onConsentCheckboxChanged: onConsentCheckboxChanged,
+                  ),
                 ],
               ),
             ),
@@ -68,6 +75,12 @@ class _MainScreenState extends State<MainScreen> {
         ),
       ),
     );
+  }
+
+  void onConsentCheckboxChanged(bool? value) {
+    setState(() {
+      isConsentCheckboxChecked = value;
+    });
   }
 
   void onEmailAddressChanged(String value) {
