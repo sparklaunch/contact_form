@@ -1,6 +1,7 @@
 import 'package:contact_form/components/email_address_text_field.dart';
 import 'package:contact_form/components/first_name_text_field.dart';
 import 'package:contact_form/components/last_name_text_field.dart';
+import 'package:contact_form/components/message.dart';
 import 'package:contact_form/components/query_type.dart';
 import 'package:contact_form/models/query.dart';
 import 'package:flutter/material.dart';
@@ -15,6 +16,7 @@ class _MainScreenState extends State<MainScreen> {
   String firstName = "";
   String lastName = "";
   String emailAddress = "";
+  String message = "";
   Query? queryType;
   @override
   Widget build(BuildContext context) {
@@ -55,6 +57,10 @@ class _MainScreenState extends State<MainScreen> {
                     query: queryType,
                     onQueryTypeChanged: onQueryTypeChanged,
                   ),
+                  const SizedBox(height: 20),
+                  Message(
+                    onMessageChanged: onMessageChanged,
+                  ),
                 ],
               ),
             ),
@@ -79,6 +85,12 @@ class _MainScreenState extends State<MainScreen> {
   void onLastNameChanged(String value) {
     setState(() {
       lastName = value;
+    });
+  }
+
+  void onMessageChanged(String value) {
+    setState(() {
+      message = value;
     });
   }
 

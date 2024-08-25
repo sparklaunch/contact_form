@@ -58,19 +58,20 @@ class _QueryTypeState extends State<QueryType> {
             borderRadius: BorderRadius.circular(10),
           ),
           child: ListTile(
-              title: const Text(
-                "Support Request",
-                style: TextStyle(
-                  fontSize: 18,
-                  color: Color.fromRGBO(47, 51, 52, 1),
-                ),
+            title: const Text(
+              "Support Request",
+              style: TextStyle(
+                fontSize: 18,
+                color: Color.fromRGBO(47, 51, 52, 1),
               ),
-              leading: Radio(
-                activeColor: const Color.fromRGBO(207, 210, 209, 1),
-                value: Query.supportRequest,
-                groupValue: widget.query,
-                onChanged: widget.onQueryTypeChanged,
-              )),
+            ),
+            leading: Radio(
+              activeColor: const Color.fromRGBO(207, 210, 209, 1),
+              value: Query.supportRequest,
+              groupValue: widget.query,
+              onChanged: widget.onQueryTypeChanged,
+            ),
+          ),
         ),
       ],
     );
